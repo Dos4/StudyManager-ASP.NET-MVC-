@@ -1,0 +1,19 @@
+﻿@model IEnumerable<CourseModel>
+
+<table id="studyTable">
+    <thead>
+        <tr>
+            <th>@InterfaceText.CourseNameColumnText</th>
+            <th>@InterfaceText.CourseDescriptionColumnText</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr class="course-row" data-course-id="@course.Id">
+                <td>@course.Name</td>
+                <td>@course.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>

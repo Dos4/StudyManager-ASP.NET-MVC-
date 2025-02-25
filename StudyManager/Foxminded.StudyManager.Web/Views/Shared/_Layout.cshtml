@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="@System.Globalization.CultureInfo.CurrentUICulture.Name">
+<head>
+    @await Html.PartialAsync("_MetaPartial")
+</head>
+<body>
+    @await Html.PartialAsync("_HeaderPartial")
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer text-muted">
+        @await Html.PartialAsync("_FooterPartial")
+    </footer>
+    @await Html.PartialAsync("_ScriptsPartial")
+    @await RenderSectionAsync("Scripts", required: false)
+    @await Html.PartialAsync("_ModalSettings")
+</body>
+</html>

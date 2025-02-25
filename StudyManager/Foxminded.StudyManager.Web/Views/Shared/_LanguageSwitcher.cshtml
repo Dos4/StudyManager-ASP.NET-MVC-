@@ -1,0 +1,13 @@
+﻿@{
+    var currentCulture = CultureInfo.CurrentUICulture.Name;
+    var returnUrl = Context.Request.GetEncodedPathAndQuery();
+}
+
+<div class="language-switcher">
+    <form method="post" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@returnUrl">
+        <select name="culture" asp-for="@currentCulture" onchange="this.form.submit()">
+            <option value="uk-UA">Українська</option>
+            <option value="en-US">English</option>
+        </select>
+    </form>
+</div>

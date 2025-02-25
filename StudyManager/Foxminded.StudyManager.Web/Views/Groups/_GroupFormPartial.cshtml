@@ -1,0 +1,17 @@
+﻿@model GroupModel
+
+<div class="mb-3">
+    <label class="form-label">@InterfaceText.GroupNameColumnText</label>
+    <input type="text" class="form-control" name="Name" value="@Model.Name" required>
+</div>
+<div class="mb-3">
+    <label class="form-label">@InterfaceText.GroupModalCourseListTitle</label>
+    <select class="form-select" name="CourseId" required>
+        @foreach (var course in ViewBag.Courses)
+        {
+            <option value="@course.Id" selected="@(course.Id == Model.CourseId)">
+                @course.Name
+            </option>
+        }
+    </select>
+</div>

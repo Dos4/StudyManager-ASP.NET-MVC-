@@ -1,0 +1,57 @@
+﻿@model IEnumerable<StudentModel>
+
+<div class="content-container">
+    <div class="table-container">
+        <table id="studyTable">
+            <thead>
+                <tr>
+                    <th>@InterfaceText.StudentsSettingsColumnText</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model)
+                {
+                    <tr class="settings-row"
+                        data-entity="Students"
+                        data-id="@student.Id"
+                        role="button"
+                        tabindex="0"
+                        aria-selected="false">
+                        <td>@student.FullName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="settings-buttons">
+        <button type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#entityModal"
+                data-entity="Students"
+                data-whatever="create">
+            @InterfaceText.AddStudentBtnText
+        </button>
+        <button type="button"
+                disabled
+                class="btn btn-warning"
+                id="editButton"
+                data-bs-toggle="modal"
+                data-bs-target="#entityModal"
+                data-entity="Students"
+                data-whatever="edit"
+                data-id="">
+            @InterfaceText.EditStudentBtnText
+        </button>
+        <button type="button"
+                disabled
+                class="btn btn-danger"
+                id="deleteButton"
+                data-bs-toggle="modal"
+                data-bs-target="#confirmDeleteModal"
+                data-entity="Students"
+                data-id="">
+            @InterfaceText.DeleteStudentBtnText
+        </button>
+    </div>
+</div>

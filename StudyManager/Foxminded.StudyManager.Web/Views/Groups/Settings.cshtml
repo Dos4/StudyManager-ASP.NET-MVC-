@@ -1,0 +1,58 @@
+﻿@model IEnumerable<GroupModel>
+
+<div class="content-container">
+    <div class="table-container">
+        <table id="studyTable">
+            <thead>
+                <tr>
+                    <th>@InterfaceText.GroupsSettingsColumnText</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var group in Model)
+                {
+                    <tr class="settings-row"
+                        data-entity="Groups"
+                        data-id="@group.Id"
+                        role="button"
+                        tabindex="0"
+                        aria-selected="false">
+                        <td>@group.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="settings-buttons">
+        <button type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#entityModal"
+                data-entity="Groups"
+                data-whatever="create">
+             @InterfaceText.AddGroupBtnText
+        </button>
+        <button type="button"
+                disabled
+                class="btn btn-warning"
+                id="editButton"
+                data-bs-toggle="modal"
+                data-bs-target="#entityModal"
+                data-entity="Groups"
+                data-whatever="edit"
+                data-id="">
+             @InterfaceText.EditGroupBtnText
+        </button>
+        <button type="button"
+                disabled
+                class="btn btn-danger"
+                id="deleteButton"
+                data-bs-toggle="modal"
+                data-bs-target="#confirmDeleteModal"
+                data-entity="Groups"
+                data-id="">
+            @InterfaceText.DeleteGroupBtnText
+        </button>
+    </div>
+</div>
+

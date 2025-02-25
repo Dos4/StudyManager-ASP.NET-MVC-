@@ -1,0 +1,87 @@
+﻿#studyTable {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    overflow-x: auto;
+}
+
+    #studyTable td, #studyTable th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #studyTable tr:hover {
+        background-color: #808080;
+        cursor: pointer;
+    }
+
+    #studyTable th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #53486a;
+        color: white;
+        cursor: default;
+    }
+
+    #studyTable .student-row:hover {
+        background-color: inherit !important;
+        cursor: default !important;
+    }
+
+.selected {
+    background-color: #554a6d;
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.btn {
+    background-color: #554a6d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+    padding: 0.5rem 1rem;
+}
+
+    .btn:hover {
+        background-color: #8b79b1 !important;
+        color: white;
+    }
+
+    .btn:disabled {
+        background-color: #ccc;
+        color: white;
+        opacity: 0.7;
+    }
+
+.modal-content {
+    background: linear-gradient(to right, #302452, #4c4168);
+    color: white;
+    border: 2px solid;
+}
+
+.language-switcher select {
+    background: linear-gradient(to bottom, #211747, #554a6d);
+    border: 1px solid #554a6d;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white;
+}
+
+    .language-switcher select:hover {
+        border-color: #554a6d;
+    }
+
+    .language-switcher select:focus {
+        outline: none;
+        border-color: #555;
+        background-color: #554a6d;
+    }

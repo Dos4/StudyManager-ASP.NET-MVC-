@@ -1,0 +1,19 @@
+﻿@model IEnumerable<GroupModel>
+
+<table id="studyTable">
+    <thead>
+        <tr>
+            <th>@InterfaceText.GroupNameColumnText</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var group in Model)
+        {
+            <tr class="group-row" data-group-id="@group.Id">
+                <td>@group.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<button type="button" class="btn btn-secondary" id="backToCourses">@InterfaceText.BackToCoursesBtnText</button>

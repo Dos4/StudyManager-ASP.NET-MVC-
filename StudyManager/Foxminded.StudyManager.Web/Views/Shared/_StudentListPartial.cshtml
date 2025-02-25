@@ -1,0 +1,21 @@
+﻿@model IEnumerable<StudentModel>
+
+<table id="studyTable">
+    <thead>
+        <tr>
+            <th>@InterfaceText.StudentFNameColumnText</th>
+            <th>@InterfaceText.StudentLNameColumnText</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr class="student-row">
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<button type="button" class="btn btn-secondary" id="backToGroups">@InterfaceText.BackToGroupsBtnText</button>

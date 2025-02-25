@@ -1,0 +1,21 @@
+﻿@model StudentModel
+
+<div class="mb-3">
+    <label class="form-label">@InterfaceText.StudentFNameColumnText</label>
+    <input type="text" class="form-control" name="FirstName" value="@Model.FirstName" required>
+</div>
+<div class="mb-3">
+    <label class="form-label">@InterfaceText.StudentLNameColumnText</label>
+    <input type="text" class="form-control" name="LastName" value="@Model.LastName" required>
+</div>
+<div class="mb-3">
+    <label class="form-label">@InterfaceText.StudentModalGroupListTitle</label>
+    <select class="form-select" name="GroupId" required>
+        @foreach (var group in ViewBag.Groups)
+        {
+            <option value="@group.Id" selected="@(group.Id == Model.GroupId)">
+                @group.Name
+            </option>
+        }
+    </select>
+</div>
